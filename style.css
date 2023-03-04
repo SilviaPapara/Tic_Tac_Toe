@@ -1,0 +1,94 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(249, 249, 249);
+  height: 90vh;
+}
+
+.container {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.statusText {
+  color: #18bc9c;
+  z-index: 10;
+  position: relative;
+  /* transform: translateY(185px) scale(2.5); */
+  transition: transform 500ms ease-in-out;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #808080;
+  line-height: 75px;
+  font-size: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cell:nth-child(3n + 1) {
+  border-left: transparent;
+}
+
+.cell:nth-child(3n + 3) {
+  border-right: transparent;
+}
+
+.cell:nth-child(-n + 3) {
+  border-top: transparent;
+}
+
+.cell:nth-last-child(-n + 3) {
+  border-bottom: transparent;
+}
+
+.cellContainer {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.cell.x {
+  color: rgb(189, 189, 189);
+}
+
+.cell.o {
+  color: rgb(101, 101, 101);
+}
+
+button {
+  all: unset;
+  position: relative;
+  height: 50px;
+  width: 120px;
+  background-color: #18bc9c;
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: large;
+  /* visibility: hidden; */
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+  z-index: 10;
+}
+
+button:hover {
+  box-shadow: 1px 1px 25px 10px rgba(46, 215, 209, 0.4);
+}
+
+.winBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(10, 10, 10, 0.705);
+  display: none;
+  z-index: 5;
+}
